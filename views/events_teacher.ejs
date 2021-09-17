@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <div class="main">
+    <%- include sidebar.ejs %>
+
+    <div class="dashboard">
+
+    <div class="title">EVENTS SCHEDULE</div>
+
+    <!-- The Modal -->
+    <div id="modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content opacity">
+            <div class="modal-title">Add/Edit Event</div>
+            <div class="field">
+                <div class="field-label">Title:</div>
+                <input class="field-input" type="text" name="event_title" placeholder="Title">
+            </div>
+            <div class="field">
+                <div class="field-label">Description:</div>
+                <input class="field-input" type="text" name="event_desc" placeholder="Description">
+            </div>
+            <div class="field">
+                <div class="field-label">Location:</div>
+                <input class="field-input" type="text" name="event_loc" placeholder="Location">
+            </div>
+            <div class="field">
+                <div class="field-label">Date:</div>
+                <input class="field-input" type="date" name="event_date" placeholder="Date">
+            </div>
+            <div class="field">
+                <div class="field-label">Start Time:</div>
+                <input class="field-input" type="time" name="event_start" placeholder="Start Time">
+            </div>
+            <div class="field">
+                <div class="field-label">End Time:</div>
+                <input class="field-input" type="time" name="event_end" placeholder="End Time">
+            </div>
+            <div class="modal-btns">
+                <div class="modal-btn cancel" onclick="closeModal()">Cancel</div>
+                <div class="modal-btn save" onclick="saveEvent()">Save</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="events">
+    <div class="event-row">
+        <div class="event">
+            <div class="event-date">
+                <div class="event-day">SEPT 21</div>
+                <div class="at-sign">@</div>
+                <div class="event-time">3:30 - 4 pm</div>
+            </div>
+            <div class="event-info">
+                <div class="event-title">Zumba Session</div>
+                <div class="event-desc">
+                    <b>Description:</b> This is a description of a Zumba session which should be really fun and cool.
+                </div>
+                <div class="event-location"><b>Location:</b> Back field</div>
+            </div>
+        </div>
+        <div class="event-status">
+            <div id="edit-event" class="action-btn edit" onclick="openModal(this)">
+                Edit
+            </div>
+            <div class="action-btn cancel" onclick="updateStatus()">
+                Cancel
+            </div>
+            <div class="action-btn reminder" onclick="updateStatus()">
+                Reminder
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</body>
+
+<script>
+    function openModal() {
+        document.getElementById("modal").style.display = "block";
+    }
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+    function saveEvent() {
+        closeModal();
+    }
+</script>
+</html> 
