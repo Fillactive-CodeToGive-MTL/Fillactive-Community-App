@@ -16,36 +16,8 @@
             </div>
         </div>
         
-        <!-- Below: actions available will differ based on user role -->
-        <% switch (user_role) { 
-        case 'student' : %>
-            <div class="event-status">
-                <div class="status-btn going" onclick="openModal(0)">
-                    Going
-                </div>
-                <div class="status-btn cant-go" onclick="">
-                    Can't Go
-                </div>
-                <div class="status-btn maybe" onclick="">
-                    Maybe
-                </div>
-            </div>
-            <% break;
-        case 'teacher' : 
-        case 'fillactive_admin': %>
-            <div class="event-status">
-                <div id="edit-event" class="action-btn edit" onclick="">
-                    <a href="edit_event">Edit</a>
-                </div>
-                <div class="action-btn cancel" onclick="updateStatus()">
-                    Cancel
-                </div>
-                <div class="action-btn reminder" onclick="updateStatus()">
-                    Reminder
-                </div>
-            </div>
-            <% break;
-        } %>
+        <% include event_actions.ejs %> 
+
     </div>
     <div class="event-row">
         <div class="event">
@@ -62,17 +34,9 @@
                 <div class="event-location">Location: Back field</div>
             </div>
         </div>
-        <div class="event-status">
-            <div class="status-btn going" onclick="openModal(1)">
-                Going
-            </div>
-            <div class="status-btn cant-go" onclick="">
-                Can't Go
-            </div>
-            <div class="status-btn maybe" onclick="">
-                Maybe
-            </div>
-        </div>
+
+        <% include event_actions.ejs %>
+
     </div>
     <div class="event-row">
         <div class="event">
@@ -89,16 +53,8 @@
                 <div class="event-location">Location: Back field</div>
             </div>
         </div>
-        <div class="event-status">
-            <div class="status-btn going" onclick="openModal(2)">
-                Going
-            </div>
-            <div class="status-btn cant-go" onclick="">
-                Can't Go
-            </div>
-            <div class="status-btn maybe" onclick="">
-                Maybe
-            </div>
-        </div>
+        
+        <% include event_actions.ejs %>
+
     </div>
 </div>
