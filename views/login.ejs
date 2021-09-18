@@ -1,8 +1,24 @@
-<form action="/users/userlogin" method="POST" id="user_login" style="display: flex;flex-direction: column;margin-top: 20em;">
-    <select name="user_role" id="user_role">
-        <option value="student">student</option>
-        <option value="teacher">teacher</option>
-        <option value="fillactive_admin">fillactive_admin</option>
-    </select>
-    <input type="submit" value="Submit">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<form action="/users/userlogin" method="POST" id="user_login">
+    <div class="input-field col s12">
+      <select name="user_role" id="user_role">
+        <option value="" disabled selected>Choose your role</option>
+        <option id="student" value="student">Student</option>
+        <option id="teacher" value="teacher">Teacher</option>
+        <option id="admin" value="fillactive_admin">Fillactive Administrator</option>
+      </select>
+      <label>Role Selection</label>
+    </div>
+    <button class="btn waves-effect waves-light roleBtn" type="submit">Submit</button>
 </form>
+
+<script>
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>

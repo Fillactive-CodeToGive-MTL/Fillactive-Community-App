@@ -1,27 +1,14 @@
 <div class="sidebar">
-  <div>
-    <img class="fitspirit-logo" src="/images/fitspirit-logo.jpg"></img>
-    <a id="feed_tab" href="#" onclick="changeTab('feed_tab')">Feed</a>
-    <a id="events" href="/events" onclick="changeTab('events')">Events</a>
-    <a id="wellness_tab" href="#" onclick="changeTab('wellness_tab')">Wellness Hub</a>
-  </div>
+  <ul id="slide-out" class="sidenav sidenav-fixed">
+    <a href="/"><img src="/images/fitspirit-logo.jpg" width="300px"></a>
+    <li><a class="sidenav-close" id="feed_tab" href="#!" onclick="changeTab('feed_tab')">Feed</a></li>
+    <li><a class="sidenav-close" id="events" href="/events" onclick="changeTab('events')">Events</a></li>
+    <li><a class="sidenav-close" id="wellness_tab" href="#!" onclick="changeTab('wellness_tab')">Wellness Hub</a></li>
+  </ul>
 </div>
 
 <script>
-  var selectedTab;
-
-  function changeTab(tab) {
-    console.log("hi");
-    console.log(selectedTab);
-
-    if (selectedTab) {
-        var elem = document.getElementById(selectedTab);
-        console.log(elem);
-        elem.classList.remove("selected");
-    }
-
-    var elem = document.getElementById(tab);
-    elem.classList.add("selected");
-    selectedTab = tab;
-  }
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 </script>

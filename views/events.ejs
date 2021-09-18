@@ -3,16 +3,16 @@
 <div class="dashboard">
 <div class="title">EVENTS SCHEDULE</div>
 
-<!-- The Modal -->
+<!-- Add to google calendar modal -->
 <div id="modal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content opacity">
-        <div class="modal-title">Would you like to add this event to your Google Calendar?</div>
-        <div class="modal-btns">
-            <div class="modal-btn save" onclick="addEvent()">Yes</div>
-            <div class="modal-btn cancel" onclick="closeModal()">No</div>
-        </div>
-    </div>
+  <div class="modal-content">
+    <h5>You have successfully registered for this event! Would you like to add this to your Google Calendar?</h4>
+  </div>
+  <div class="modal-footer">
+    <button class="modal-close waves-effect waves-green btn-flat" onclick="addEvent()">Yes</button>
+    <button class="modal-close waves-effect waves-red btn-flat" onclick="closeModal()">No</button>
+    
+  </div>
 </div>
 
 <%- include ./events/add_or_edit_event_form.ejs %>
