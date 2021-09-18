@@ -1,0 +1,23 @@
+<%- include ../partials/header.ejs %>
+
+<div class="dashboard">
+
+    <div class="title">Edit event</div>
+
+    <%- include add_or_edit_event_form.ejs %>
+        
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById("modal").style.display = "block";
+    }
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+    function saveEvent() {
+        closeModal();
+    }
+</script>
+
+<%- include ./partials/footer.ejs %>
