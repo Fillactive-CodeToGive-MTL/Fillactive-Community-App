@@ -5,12 +5,24 @@
 <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
-<div>
     <div class="main">
-
+    <%- include sidebar.ejs %>
 
     <div class="dashboard">
     <div class="title">EVENTS SCHEDULE</div>
+
+    <!-- The Modal -->
+    <div id="modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content opacity">
+            <div class="modal-title">Would you like to add this event to your Google Calendar?</div>
+            <div class="modal-btns">
+                <div class="modal-btn save" onclick="addEvent()">Yes</div>
+                <div class="modal-btn cancel" onclick="closeModal()">No</div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="events">
     <div class="event-row">
@@ -29,13 +41,13 @@
             </div>
         </div>
         <div class="event-status">
-            <div class="status-btn going" onclick="updateStatus()">
+            <div class="status-btn going" onclick="openModal(0)">
                 Going
             </div>
-            <div class="status-btn cant-go" onclick="updateStatus()">
+            <div class="status-btn cant-go" onclick="">
                 Can't Go
             </div>
-            <div class="status-btn maybe" onclick="updateStatus()">
+            <div class="status-btn maybe" onclick="">
                 Maybe
             </div>
         </div>
@@ -56,13 +68,13 @@
             </div>
         </div>
         <div class="event-status">
-            <div class="status-btn going" onclick="updateStatus()">
+            <div class="status-btn going" onclick="openModal(1)">
                 Going
             </div>
-            <div class="status-btn cant-go" onclick="updateStatus()">
+            <div class="status-btn cant-go" onclick="">
                 Can't Go
             </div>
-            <div class="status-btn maybe" onclick="updateStatus()">
+            <div class="status-btn maybe" onclick="">
                 Maybe
             </div>
         </div>
@@ -83,13 +95,13 @@
             </div>
         </div>
         <div class="event-status">
-            <div class="status-btn going" onclick="updateStatus()">
+            <div class="status-btn going" onclick="openModal(2)">
                 Going
             </div>
-            <div class="status-btn cant-go" onclick="updateStatus()">
+            <div class="status-btn cant-go" onclick="">
                 Can't Go
             </div>
-            <div class="status-btn maybe" onclick="updateStatus()">
+            <div class="status-btn maybe" onclick="">
                 Maybe
             </div>
         </div>
@@ -97,7 +109,60 @@
     </div>
     </div>
     </div>
-</div>
 
 </body>
+
+
+
+<script>
+    function openModal(event) {
+        document.getElementById("modal").style.display = "block";
+        selectedEvent = event;
+    }
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+    function addEvent() {
+        console.log(selectedEvent);
+        let url = "https://calendar.google.com/calendar/event?action=TEMPLATE&dates=";
+        url += events[selectedEvent]["start"].replaceAll("-","").replaceAll(":","");
+        url += "%2F";
+        url += events[selectedEvent]["end"].replaceAll("-","").replaceAll(":","");
+        url += "&text=";
+        url += events[selectedEvent]["title"].replaceAll(" ","+");
+        url += "&details=";
+        url += events[selectedEvent]["description"].replaceAll(" ","+");
+        url += "&location=";
+        url += events[selectedEvent]["location"].replaceAll(" ","+");
+        window.open(url, '_blank').focus();
+        closeModal();
+    }
+
+    let selectedEvent = 0;
+
+    const events = [
+        {
+            "title":"Zumba Session",
+            "description":"This is a description of a Zumba session which should be really fun and cool.",
+            "location":"Back field",
+            "start":"2021-12-12T20:30:00Z",
+            "end":"2021-12-12T21:00:00Z"
+        },
+        {
+            "title":"Soccer",
+            "description":"Come join us to play some soccer on the back field!",
+            "location":"Back field",
+            "start":"2021-12-12T20:30:00Z",
+            "end":"2021-12-12T21:00:00Z"
+        },
+        {
+            "title":"Hiking Trip",
+            "description":"Come join Ms. Smith and the other students on a hiking trip in Gatineau Park.",
+            "location":"Gatineau Park",
+            "start":"2021-12-12T14:00:00Z",
+            "end":"2021-12-12T21:00:00Z"
+        }
+    ];
+    
+</script>
 </html> 
