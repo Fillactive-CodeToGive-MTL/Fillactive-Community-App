@@ -1,39 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="stylesheets/style.css">
-</head>
-<body>
-<div class="sidebar">
-  <div>
-    <img class="fitspirit-logo" src="/images/fitspirit-logo.jpg"></img>
-    <a id="feed_tab" href="#" onclick="changeTab('feed_tab')">Feed</a>
-    <a id="events_tab" href="#" onclick="changeTab('events_tab')">Events Schedule</a>
-    <a id="events_student" href="/events_student" onclick="changeTab('events_student')">Events Student</a>
-    <a id="events_teacher" href="/events_teacher" onclick="changeTab('events_teacher')">Events Teacher</a>
-    <a id="wellness_tab" href="/events_student" onclick="changeTab('wellness_tab')">Wellness Hub</a>
-  </div>
-</div>
+<%- include ./partials/header.ejs %>
 
-<script>
-  var selectedTab;
+<% include login.ejs %>
 
-  function changeTab(tab) {
-    console.log("hi");
-    console.log(selectedTab);
-
-    if (selectedTab) {
-        var elem = document.getElementById(selectedTab);
-        console.log(elem);
-        elem.classList.remove("selected");
-    }
-
-    var elem = document.getElementById(tab);
-    elem.classList.add("selected");
-    selectedTab = tab;
-  }
-</script>
-   
-</body>
-</html> 
+<%- include ./partials/footer.ejs %>

@@ -1,0 +1,83 @@
+<%- include ./partials/header.ejs %>
+
+<div class="dashboard">
+<div class="title">EVENTS SCHEDULE</div>
+
+<!-- The Modal -->
+<div id="modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content opacity">
+        <div class="modal-title">Would you like to add this event to your Google Calendar?</div>
+        <div class="modal-btns">
+            <div class="modal-btn save" onclick="addEvent()">Yes</div>
+            <div class="modal-btn cancel" onclick="closeModal()">No</div>
+        </div>
+    </div>
+</div>
+
+<%- include ./events/add_or_edit_event_form.ejs %>
+
+<!-- embed list of events below -->
+<%- include ./events/events_list.ejs %>
+    
+</div>
+</div>
+
+</body>
+
+
+<script>
+    function openModal(event) {
+        document.getElementById("modal").style.display = "block";
+        selectedEvent = event;
+    }
+    function openEditModal(event) {
+        selectedEvent = event;
+        var editModal = document.getElementById("editModal").style.display = "block";
+        document.getElementById("event_title").value = events[selectedEvent]["title"];
+        document.getElementById("event_desc").value = events[selectedEvent]["description"];
+        document.getElementById("event_loc").value = events[selectedEvent]["location"];
+    }
+    function saveEvent() {
+        console.log("SAVE")
+        document.getElementById("editModal").style.display = "none";
+        events[selectedEvent]["title"] = document.getElementById("event_title").value;
+        events[selectedEvent]["description"] = document.getElementById("event_desc").value;
+        events[selectedEvent]["location"] = document.getElementById("event_loc").value;
+    }
+    function closeEditModal() {
+        document.getElementById("editModal").style.display = "none";
+    }
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+    function addEvent() {
+        console.log(selectedEvent);
+        console.log(events[selectedEvent])
+        let url = "https://calendar.google.com/calendar/event?action=TEMPLATE&dates=";
+        url += events[selectedEvent]["start"].replaceAll("-","").replaceAll(":","");
+        url += "%2F";
+        url += events[selectedEvent]["end"].replaceAll("-","").replaceAll(":","");
+        url += "&text=";
+        url += events[selectedEvent]["title"].replaceAll(" ","+");
+        url += "&details=";
+        url += events[selectedEvent]["description"].replaceAll(" ","+");
+        url += "&location=";
+        url += events[selectedEvent]["location"].replaceAll(" ","+");
+        window.open(url, '_blank').focus();
+        closeModal();
+    }
+
+    function saveEvent(event) {
+        events[selectedEvent][""]
+    }
+
+    let selectedEvent = 0;
+
+    var events = JSON.parse('<%- JSON.stringify(events_data)%>')
+
+    console.log(events)
+    
+</script>
+
+<%- include ./partials/footer.ejs %>

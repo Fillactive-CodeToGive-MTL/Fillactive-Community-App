@@ -1,0 +1,54 @@
+<!-- Static list of allevents -->
+<div class="events">
+     <!-- for each event in the events data -->
+    <% events_data.forEach((event, i) => { %>
+        <div class="event-row">
+            <div class="event">
+                <div class="event-date">
+                    <div class="event-day"><%= event.date %></div>
+                    <div class="at-sign">@</div>
+                    <div class="event-time"><%= event.times %></div>
+                </div>
+                <div class="event-info">
+                    <div class="event-title"><%= event.title %></div>
+                    <div class="event-desc">
+                        <b>Description:</b> <%= event.description %>
+                    </div>
+                    <div class="event-location">Group: <%= event.group %>  </div>
+                </div>
+            </div>
+
+            <% switch (user_role) { 
+                case 'student' : %>
+                    <div class="event-status">
+                        <div class="status-btn going" onclick="openModal('<%= i %>')">
+                            Going
+                        </div>
+                        <div class="status-btn cant-go" onclick="">
+                            Can't Go
+                        </div>
+                        <div class="status-btn maybe" onclick="">
+                            Maybe
+                        </div>
+                    </div>
+                    <% break;
+                case 'teacher' : 
+                case 'fillactive_admin': %>
+                    <div class="event-status">
+                        <div id="edit-event" class="action-btn edit" onclick="openEditModal('<%= i %>')">
+                            Edit
+                        </div>
+                        <div class="action-btn cancel" onclick="updateStatus()">
+                            Cancel
+                        </div>
+                        <div class="action-btn reminder" onclick="updateStatus()">
+                            Reminder
+                        </div>
+                    </div>
+                    <% break;
+                } %>
+        </div>
+            
+    <% }); %>
+
+</div>
