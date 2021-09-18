@@ -1,60 +1,26 @@
 <!-- Static list of allevents -->
 <div class="events">
-    <div class="event-row">
-        <div class="event">
-            <div class="event-date">
-                <div class="event-day">SEPT 21</div>
-                <div class="at-sign">@</div>
-                <div class="event-time">3:30 - 4 pm</div>
-            </div>
-            <div class="event-info">
-                <div class="event-title">Zumba Session</div>
-                <div class="event-desc">
-                    <b>Description:</b> This is a description of a Zumba session which should be really fun and cool.
+     <!-- for each event in the events data -->
+    <% events_data.forEach((event) => { %>
+        <div class="event-row">
+            <div class="event">
+                <div class="event-date">
+                    <div class="event-day"><%= event.startdate %></div>
+                    <div class="at-sign">@</div>
+                    <div class="event-time"><%= event.starttime %></div>
                 </div>
-                <div class="event-location">Location: Back field</div>
-            </div>
-        </div>
-        
-        <% include event_actions.ejs %> 
-
-    </div>
-    <div class="event-row">
-        <div class="event">
-            <div class="event-date">
-                <div class="event-day">SEPT 21</div>
-                <div class="at-sign">@</div>
-                <div class="event-time">3:30 - 4 pm</div>
-            </div>
-            <div class="event-info">
-                <div class="event-title">Zumba Session</div>
-                <div class="event-desc">
-                    Description: This is a description of a Zumba session which should be really fun and cool.
+                <div class="event-info">
+                    <div class="event-title"><%= event.title %></div>
+                    <div class="event-desc">
+                        <b>Description:</b> <%= event.description %>
+                    </div>
+                    <div class="event-location">Group: <%= event.group %>  </div>
                 </div>
-                <div class="event-location">Location: Back field</div>
             </div>
+
+            <% include event_actions.ejs %>
         </div>
+            
+    <% }); %>
 
-        <% include event_actions.ejs %>
-
-    </div>
-    <div class="event-row">
-        <div class="event">
-            <div class="event-date">
-                <div class="event-day">SEPT 21</div>
-                <div class="at-sign">@</div>
-                <div class="event-time">3:30 - 4 pm</div>
-            </div>
-            <div class="event-info">
-                <div class="event-title">Zumba Session</div>
-                <div class="event-desc">
-                    Description: This is a description of a Zumba session which should be really fun and cool.
-                </div>
-                <div class="event-location">Location: Back field</div>
-            </div>
-        </div>
-        
-        <% include event_actions.ejs %>
-
-    </div>
 </div>

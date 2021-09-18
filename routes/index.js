@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+// importing data for events
+var events_data = require('../data/events_data')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,7 +11,8 @@ router.get('/', function(req, res, next) {
 router.get('/events', function(req, res, next) {
   res.render('events', { 
     title: 'Fillactive Community App | Events',
-    user_role: req.app.locals.user_role
+    user_role: req.app.locals.user_role,
+    events_data: events_data
   });
 });
 
