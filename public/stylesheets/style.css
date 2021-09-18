@@ -176,7 +176,7 @@ a {
 }
 
 .modal {
-display: block;
+display: none;
 }
 
 /* Modal Content/Box */

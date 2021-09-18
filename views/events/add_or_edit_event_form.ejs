@@ -1,34 +1,34 @@
 <!-- The Modal -->
-<div id="modal" class="modal">
+<div id="editModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content opacity">
         <div class="modal-title">Add/Edit Event</div>
         <div class="field">
             <div class="field-label">Title:</div>
-            <input class="field-input" type="text" name="event_title" placeholder="Title">
+            <input id="event_title" class="field-input" type="text" name="event_title" placeholder="Title">
         </div>
         <div class="field">
             <div class="field-label">Description:</div>
-            <input class="field-input" type="text" name="event_desc" placeholder="Description">
-        </div>
+            <input id="event_desc" class="field-input" type="text" name="event_desc" placeholder="Description">
+        </div> 
         <div class="field">
             <div class="field-label">Location:</div>
-            <input class="field-input" type="text" name="event_loc" placeholder="Location">
+            <input id="event_loc" class="field-input" type="text" name="event_loc" placeholder="Location">
         </div>
         <div class="field">
             <div class="field-label">Date:</div>
-            <input class="field-input" type="date" name="event_date" placeholder="Date">
+            <input id="event_date" class="field-input" type="date" name="event_date" placeholder="Date">
         </div>
         <div class="field">
             <div class="field-label">Start Time:</div>
-            <input class="field-input" type="time" name="event_start" placeholder="Start Time">
+            <input id="event_start" class="field-input" type="time" name="event_start" placeholder="Start Time">
         </div>
         <div class="field">
             <div class="field-label">End Time:</div>
-            <input class="field-input" type="time" name="event_end" placeholder="End Time">
+            <input id="event_end" class="field-input" type="time" name="event_end" placeholder="End Time">
         </div>
         <div class="modal-btns">
-            <div class="modal-btn cancel" onclick="closeModal()">Cancel</div>
+            <div class="modal-btn cancel" onclick="closeEditModal()">Cancel</div>
             <div class="modal-btn save" onclick="saveEvent()">Save</div>
         </div>
     </div>
