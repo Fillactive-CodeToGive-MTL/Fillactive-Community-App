@@ -1,51 +1,55 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="stylesheets/style.css">
-</head>
-<body>
-<div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<%- include ./partials/header.ejs %>
+<div class="wellness-page">
     <div class="title">WELLNESS HUB</div>
     <div class="wellness_component"> Quote of the week</div>
         <blockquote class="blockquote">
-            <p class="blockquote_text">
-                Nothing can dim the light that comes from within.
-            </p>
-            <p class="blockquote-author">
-                - Maya Angelou
-            </p>
+            Nothing can dim the light that comes from within.
+            <br>&emsp;&emsp;&emsp;- Maya Angelou
         </blockquote>
 
     <div class="wellness_component"> Recent Posts</div>
-
-    <div class="wrapper">
-        <div class="wellness_news">
-            <div class="wellness_title">
-                <div class="wellness_img">
-                    <img src="https://www.healthxchange.sg/sites/hexassets/Assets/wellness/ten-ways-achieve-mental-wellness-b.jpg" alt="image">
-                </div>
-                <h3> Exercise & Fitness</h3>
-                <p><a href="https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm" target="_blank" rel="noopener noreferrer">READ MORE </a></p>
-                <p> The Mental Health Benefits of Exercise</p>
-            </div>
-            <div class="wellness_title">
-                <div class="wellness_img">
-                    <img src="https://www.gardendesign.com/pictures/images/263x300Exact_62x0/site_3/helianthus-yellow-flower-pixabay_11863.jpg" alt="image">
-                </div>
-                <h3>Calling all sunflower fans</h3>
-                <p><a href="https://www.winchesterstar.com/winchester_star/calling-all-sunflower-fans-free-weekend-harvest-hoping-to-shine-light-on-mental-wellness/article_659e5922-0bc4-5c71-9bbd-da74de411deb.html" target="_blank" rel="noopener noreferrer">READ MORE </a></p>
-                <p> Free weekend harvest hoping to shine light on mental wellness</p>
-            </div>
+    
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="https://www.healthxchange.sg/sites/hexassets/Assets/wellness/ten-ways-achieve-mental-wellness-b.jpg" alt="image">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Exercise & Wellness</div>
+            <p> The Mental Health Benefits of Exercise</p>
+          </div>
+          <div class="card-action">
+            <a href="https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm" target="_blank" rel="noopener noreferrer">Read more</a>
+          </div>
         </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="https://www.gardendesign.com/pictures/images/263x300Exact_62x0/site_3/helianthus-yellow-flower-pixabay_11863.jpg" alt="image">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Calling all sunflower fans</div>
+            <p> Free weekend harvest hoping to shine light on mental wellness</p>
+          </div>
+          <div class="card-action">
+            <a href="https://www.winchesterstar.com/winchester_star/calling-all-sunflower-fans-free-weekend-harvest-hoping-to-shine-light-on-mental-wellness/article_659e5922-0bc4-5c71-9bbd-da74de411deb.html" target="_blank" rel="noopener noreferrer">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="wellness_component"> News</div>
-        <br>
-        <marquee direction="up" scrollamount="5">
-        Mental health week! Learn more about Mental Health Awareness week!
-        <br>
-        Other news here.
-        </marquee>
+    <div class="wellness_component">News</div>
+    <br>
+    <h5>MENTAL HEALTH WEEK</h5>
+    <p>Learn more about Mental Health Awareness Week!</p>
+    <a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a>
 </div>
-</body>
-</html>

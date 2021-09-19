@@ -62,3 +62,5 @@ typings/
 
 # .DS_Store file added in directory on macOS
 .DS_Store
+
+.vscode

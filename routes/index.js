@@ -21,3 +21,9 @@ router.get('/edit_event', function(req, res, next) {
 });
 
 module.exports = router;
+
+router.get('/wellness-hub', function(req, res, next) {
+  res.render('wellnesshub', {
+    title: 'Fillactive Community App | Wellness Hub'
+  });
+});
