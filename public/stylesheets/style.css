@@ -1,4 +1,4 @@
-html {
+html, button {
   font-family: "Poppins", sans-serif!important;
 }
 
@@ -20,8 +20,17 @@ html {
   text-transform: uppercase;
 }
 
-i {
-  font-size: 40px!important;
+.event-icon {
+  font-size: 1.5rem!important;
+  vertical-align: bottom;
+}
+
+.event-location {
+  margin-bottom: 8px;
+}
+
+.card {
+  margin-right: 20px!important;
 }
 
 .dropdown-content li>span {
@@ -41,11 +50,16 @@ form {
   display: flex;
   flex-direction: row;
 }
-
-.main, html, body {
+/* 
+.main, body {
     height: 100%;
     width: 100%;
     margin: 0;
+} */
+
+a {
+  cursor: pointer;
+  color:#b685f8!important;
 }
 
 .dashboard {
@@ -171,6 +185,17 @@ form {
 
 .modal-content input {
 margin: 10px 0;
+}
+
+.modal {
+  margin-left: 400px;
+  margin-top: 200px;
+  z-index: 9999;
+}
+
+.card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color:#8200ff;
+  cursor: pointer;
 }
 
 /* The Close Button */

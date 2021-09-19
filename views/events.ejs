@@ -1,4 +1,9 @@
 <%- include ./partials/header.ejs %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
 <div class="dashboard">
 <div class="title">EVENTS SCHEDULE</div>
@@ -6,12 +11,11 @@
 <!-- Add to google calendar modal -->
 <div id="modal" class="modal">
   <div class="modal-content">
-    <h5>You have successfully registered for this event! Would you like to add this to your Google Calendar?</h4>
+    <h6>You have successfully registered for this event! Would you like to add this to your Google Calendar?</h4>
   </div>
   <div class="modal-footer">
     <button class="modal-close waves-effect waves-green btn-flat" onclick="addEvent()">Yes</button>
     <button class="modal-close waves-effect waves-red btn-flat" onclick="closeModal()">No</button>
-    
   </div>
 </div>
 
@@ -32,6 +36,9 @@
         selectedEvent = event;
     }
     function openEditModal(event) {
+        $("label").addClass('active');
+        $('.datepicker').datepicker();
+        $('.timepicker').timepicker();
         selectedEvent = event;
         var editModal = document.getElementById("editModal").style.display = "block";
         document.getElementById("event_title").value = events[selectedEvent]["title"];

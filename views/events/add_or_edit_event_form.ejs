@@ -1,35 +1,45 @@
 <!-- The Modal -->
 <div id="editModal" class="modal">
     <!-- Modal content -->
-    <div class="modal-content opacity">
-        <div class="modal-title">Add/Edit Event</div>
-        <div class="field">
-            <div class="field-label">Title:</div>
-            <input id="event_title" class="field-input" type="text" name="event_title" placeholder="Title">
+    <div class="modal-content">
+      <div class="modal-content">
+        <h5>Add/Edit Event</h5>
+        <br>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">event</i>
+          <input id="event_title" type="text" class="validate">
+          <label for="event_title">Title</label>
         </div>
-        <div class="field">
-            <div class="field-label">Description:</div>
-            <input id="event_desc" class="field-input" type="text" name="event_desc" placeholder="Description">
-        </div> 
-        <div class="field">
-            <div class="field-label">Location:</div>
-            <input id="event_loc" class="field-input" type="text" name="event_loc" placeholder="Location">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">description</i>
+          <input id="event_desc" type="text" class="validate">
+          <label for="event_desc">Description</lable>
         </div>
-        <div class="field">
-            <div class="field-label">Date:</div>
-            <input id="event_date" class="field-input" type="date" name="event_date" placeholder="Date">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">edit_location</i>
+          <input id="event_loc" type="text" class="validate">
+          <label for="event_loc">Location</label>
         </div>
-        <div class="field">
-            <div class="field-label">Start Time:</div>
-            <input id="event_start" class="field-input" type="time" name="event_start" placeholder="Start Time">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">date_range</i>
+          <input type="text" class="datepicker" id="event_date">
+          <label for="event_date">Date</label>
         </div>
-        <div class="field">
-            <div class="field-label">End Time:</div>
-            <input id="event_end" class="field-input" type="time" name="event_end" placeholder="End Time">
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">access_time</i>
+            <input type="text" class="timepicker" id="start_time">
+            <label for="start_time">Start Time</label>
+            </div>
+          <div class="input-field col s6">
+            <input type="text" class="timepicker" id="end_time">
+            <label for="end_time">End Time</label>
+          </div>
         </div>
-        <div class="modal-btns">
-            <div class="modal-btn cancel" onclick="closeEditModal()">Cancel</div>
-            <div class="modal-btn save" onclick="saveEvent()">Save</div>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat" onclick="closeEditModal()">Cancel</a>
+        <a class="modal-close waves-effect waves-green btn-flat" onclick="saveEvent()">Save</a>
+      </div>
     </div>
 </div>
