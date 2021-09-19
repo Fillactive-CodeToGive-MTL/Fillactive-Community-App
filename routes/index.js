@@ -6,7 +6,11 @@ var posts_data = require('../data/posts_data')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Fillactive Community App' });
+  res.render('login', { 
+    title: 'Fillactive Community App | Login',
+    loginerror: req.app.locals.loginerror,
+    loginerrormessage: req.app.locals .loginerrormessage
+  });
 });
 
 router.get('/feed', function(req, res, next) {
