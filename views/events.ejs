@@ -1,9 +1,12 @@
 <%- include ./partials/header.ejs %>
 
+<div class="main-events">
+    <%- include sidebar.ejs %>
+
 <div class="dashboard">
     <div class="event-header">
         <div class="title">EVENTS SCHEDULE</div>
-        <div class="add-event-btn card" onclick="openAddModal()"><i class="material-icons">event</i> &nbsp; Add Event</div>
+        <div class="add-event-btn card-small" onclick="openAddModal()"><i class="material-icons">event</i> &nbsp; Add Event</div>
     </div>
 
 
@@ -19,6 +22,7 @@
 </div>
 
 <%- include ./events/add_or_edit_event_form.ejs %>
+<%- include ./events/add_event_form.ejs %>
 
 <!-- embed list of events below -->
 <%- include ./events/events_list.ejs %>
@@ -50,9 +54,19 @@
     }
     function openAddModal() {
         var editModal = document.getElementById("editModal").style.display = "block";
+        document.getElementById("event_title").value = '';
+        document.getElementById("event_desc").value = '';
+        document.getElementById("event_loc").value = '';
+        document.getElementById("event_date").value = '';
+        document.getElementById("start_time").value = '';
+        document.getElementById("end_time").value = '';
+        selectedIndex = -1;
     }
     function save() {
-        document.getElementById("editModal").style.display = "none";
+        closeEditModal();
+        if(selectedIndex == -1) {
+            return; // add event not edit
+        }
         var event = events[selectedIndex];
         event["title"] = document.getElementById("event_title").value;
         event["description"] = document.getElementById("event_desc").value;
