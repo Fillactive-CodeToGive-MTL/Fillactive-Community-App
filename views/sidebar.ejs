@@ -1,14 +1,26 @@
-<div class="sidebar">
-  <ul id="slide-out" class="sidenav sidenav-fixed">
-    <a href="/"><img src="/images/fitspirit-logo.jpg" width="300px"></a>
-    <li><a class="sidenav-close" id="feed_tab" href="/feed" onclick="changeTab('feed_tab')">Feed</a></li>
-    <li><a class="sidenav-close" id="events" href="/events" onclick="changeTab('events')">Events</a></li>
-    <li><a class="sidenav-close" id="wellness_tab" href="/wellness-hub" onclick="changeTab('wellness_tab')">Wellness Hub</a></li>
-  </ul>
-</div>
+<ul id="slide-out" class="sidenav sidenav-fixed">
+  <a href="/"><img src="/images/fitspirit-logo.jpg" width="300px"></a>
+  <li class="tab feed-tab"><a class="sidenav-close" id="feed_tab" href="/feed">Feed</a></li>
+  <li class="tab event-tab"><a class="sidenav-close" id="events" href="/events">Events</a></li>
+  <li class="tab wellness-tab"><a class="sidenav-close" id="wellness_tab" href="/wellness-hub">Wellness Hub</a></li>
+</ul>
 
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  })
   $(document).ready(function(){
     $('.sidenav').sidenav();
+    var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/"));
+    console.log("pgurl: "+pgurl);
+    $(".sidenav li a").each(function(){
+      $(this).parent().removeClass("active");
+      var tab = $(this).attr("href");
+      console.log("tab: "+tab);
+      if($(this).attr("href") == pgurl || $(this).attr("href") == ''){
+        $(this).parent().addClass("active");
+      }
+    })
   });
 </script>
