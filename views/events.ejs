@@ -5,7 +5,7 @@
 <div class="dashboard">
     <div class="event-header">
         <div class="title">EVENTS SCHEDULE</div>
-        <div class="add-event-btn card-small" onclick="openAddModal()"><i class="material-icons">event</i> &nbsp; Add Event</div>
+        <% if (user_role == 'teacher') { %><div class="add-event-btn card-small" onclick="openAddModal()"><i class="material-icons">event</i> &nbsp; Add Event</div><%}; %>
     </div>
 
 
