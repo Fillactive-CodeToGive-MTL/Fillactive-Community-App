@@ -1,0 +1,90 @@
+<%- include ./partials/header.ejs %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<div class="dashboard">
+<div class="title">EVENTS SCHEDULE</div>
+
+<!-- Add to google calendar modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h6>You have successfully registered for this event! Would you like to add this to your Google Calendar?</h4>
+  </div>
+  <div class="modal-footer">
+    <button class="modal-close waves-effect waves-green btn-flat" onclick="addEvent()">Yes</button>
+    <button class="modal-close waves-effect waves-red btn-flat" onclick="closeModal()">No</button>
+  </div>
+</div>
+
+<%- include ./events/add_or_edit_event_form.ejs %>
+
+<!-- embed list of events below -->
+<%- include ./events/events_list.ejs %>
+    
+</div>
+</div>
+
+</body>
+
+
+<script>
+    function openModal(event) {
+        document.getElementById("modal").style.display = "block";
+        selectedEvent = event;
+    }
+    function openEditModal(event) {
+        $("label").addClass('active');
+        $('.datepicker').datepicker();
+        $('.timepicker').timepicker();
+        selectedEvent = event;
+        var editModal = document.getElementById("editModal").style.display = "block";
+        document.getElementById("event_title").value = events[selectedEvent]["title"];
+        document.getElementById("event_desc").value = events[selectedEvent]["description"];
+        document.getElementById("event_loc").value = events[selectedEvent]["location"];
+    }
+    function saveEvent() {
+        console.log("SAVE")
+        document.getElementById("editModal").style.display = "none";
+        events[selectedEvent]["title"] = document.getElementById("event_title").value;
+        events[selectedEvent]["description"] = document.getElementById("event_desc").value;
+        events[selectedEvent]["location"] = document.getElementById("event_loc").value;
+    }
+    function closeEditModal() {
+        document.getElementById("editModal").style.display = "none";
+    }
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+    function addEvent() {
+        console.log(selectedEvent);
+        console.log(events[selectedEvent])
+        let url = "https://calendar.google.com/calendar/event?action=TEMPLATE&dates=";
+        url += events[selectedEvent]["start"].replaceAll("-","").replaceAll(":","");
+        url += "%2F";
+        url += events[selectedEvent]["end"].replaceAll("-","").replaceAll(":","");
+        url += "&text=";
+        url += events[selectedEvent]["title"].replaceAll(" ","+");
+        url += "&details=";
+        url += events[selectedEvent]["description"].replaceAll(" ","+");
+        url += "&location=";
+        url += events[selectedEvent]["location"].replaceAll(" ","+");
+        window.open(url, '_blank').focus();
+        closeModal();
+    }
+
+    function saveEvent(event) {
+        events[selectedEvent][""]
+    }
+
+    let selectedEvent = 0;
+
+    var events = JSON.parse('<%- JSON.stringify(events_data)%>')
+
+    console.log(events)
+    
+</script>
+
+<%- include ./partials/footer.ejs %>

@@ -1,56 +1,74 @@
-a {
-  color: #00B7FF;
+html, button {
+  font-family: "Poppins", sans-serif!important;
+}
+
+.sidebar {
+  padding-left:25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  margin-left: 300px;
+}
+
+.sidenav {
+  padding-left: 25px;
+}
+
+.sidenav li>a {
+  font-size: 18px!important;
+  color: #8200ff!important;
+  font-weight: 700!important;
+  text-transform: uppercase;
+}
+
+.event-icon {
+  font-size: 1.5rem!important;
+  vertical-align: bottom;
+}
+
+.event-location {
+  margin-bottom: 8px;
+}
+
+.card {
+  margin-right: 20px!important;
+}
+
+.dropdown-content li>span {
+  color: #ed2939!important;
+}
+.roleBtn {
+  background-color: #ed2939!important;
+  font-weight: 700;
+}
+
+form {
+  margin-top: 25px;
+  margin-left: 20px;
 }
 
 .main {
   display: flex;
   flex-direction: row;
 }
-
-.main, html, body {
+/*
+.main, body {
     height: 100%;
     width: 100%;
     margin: 0;
+} */
+
+a {
+  cursor: pointer;
+  color:#b685f8!important;
 }
 
 .dashboard {
-  width: 80%;
-  background-color: #FCDDEC;
-  background-image: linear-gradient(#FCDDEC, #f37261);
-  border-left: 2px solid black;
+  width: 100%;
+  height: 100%;
 }
 
 .header {
   height: 100px;
-}
-
-.sidebar {
-  width: 20%;
-  z-index: 4;
-  background-color: #fff;
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-
-.sidebar a {
-  padding: 8px 8px 8px 25px;
-  text-decoration: none;
-  font-size: 25px;
-  z-index: 2;
-  color: #272626;
-  background-color: #fff;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar .selected {
-  background-color: #FCDDEC;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-}
-
-.sidebar a:hover:not(.selected) {
-  color: #818181;
 }
 
 .logout{
@@ -61,22 +79,12 @@ a {
 }
 
 .title {
-  font-size: 45px;
-  font-family: Georgia;
-  color: black;
-  position: relative;
-  left: 30px;
-  top: 20px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #8200ff;
+  padding-left: 30px;
+  padding-top: 20px;
   padding-bottom: 20px;
-}
-
-.fitspirit-logo {
-  max-height: 100px;
-  max-width: 100%;
-  transform: scale(1.5);
-  overflow: hidden;
-  align-self: center;
-  z-index: 1;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -114,7 +122,7 @@ a {
   background-color: white;
   border: 2px solid black;
   padding: 5px;
-  width: 25%;
+  width: 30%;
 }
 
 .event-day {
@@ -165,8 +173,63 @@ a {
 
 .event-title {
   font-size: 22px;
-  font-family: Georgia;
   font-weight: bold;
+}
+
+.action-btn {
+  background-color: white;
+  border: 2px solid black;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+.modal-content input {
+margin: 10px 0;
+}
+
+.modal {
+  margin-left: 400px;
+  margin-top: 200px;
+  z-index: 9999;
+}
+
+.card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color:#8200ff;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close {
+color: #aaa;
+position: relative;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+.field {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.field-label {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+width: 25%;
+}
+
+.field-input {
+width: 70%;
+justify-content: end;
 }
 
 

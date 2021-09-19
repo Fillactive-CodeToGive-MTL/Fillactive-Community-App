@@ -1,0 +1,44 @@
+<!-- Static list of allevents -->
+<div class="events">
+  <!-- for each event in the events data -->
+  <% events_data.forEach((event, i) => { %> <% switch (user_role) { case
+  'student' : %>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><%= event.title %></span>
+      <p><%= event.description %></p>
+      <br />
+      <div class="event-location">
+        <i class="event-icon material-icons">location_on</i>&emsp;<%=
+        event.location %><br />
+      </div>
+      <i class="event-icon material-icons">access_time</i>&emsp;<%= event.date
+      %>, <%= event.times %>
+    </div>
+    <div class="card-action">
+      <a onclick="openModal('<%= i %>')">Going</a>
+      <a onclick="">Can't Go</a>
+      <a onclick="">Maybe</a>
+    </div>
+  </div>
+  <% break; case 'teacher' : case 'fillactive_admin': %>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><%= event.title %></span>
+      <p><%= event.description %></p>
+      <br />
+      <div class="event-location">
+        <i class="event-icon material-icons">location_on</i>&emsp;<%=
+        event.location %><br />
+      </div>
+      <i class="event-icon material-icons">access_time</i>&emsp;<%= event.date
+      %>, <%= event.times %>
+    </div>
+    <div class="card-action">
+      <a onclick="openEditModal('<%= i %>')">Edit</a>
+      <a onclick="updateStatus()">Cancel</a>
+      <a onclick="updateStatus()">Set Reminder</a>
+    </div>
+  </div>
+  <% break; } %> <% }); %>
+</div>

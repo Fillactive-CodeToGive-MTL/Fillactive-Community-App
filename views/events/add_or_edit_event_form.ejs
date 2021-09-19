@@ -1,0 +1,45 @@
+<!-- The Modal -->
+<div id="editModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-content">
+        <h5>Add/Edit Event</h5>
+        <br>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">event</i>
+          <input id="event_title" type="text" class="validate">
+          <label for="event_title">Title</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">description</i>
+          <input id="event_desc" type="text" class="validate">
+          <label for="event_desc">Description</lable>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">edit_location</i>
+          <input id="event_loc" type="text" class="validate">
+          <label for="event_loc">Location</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">date_range</i>
+          <input type="text" class="datepicker" id="event_date">
+          <label for="event_date">Date</label>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">access_time</i>
+            <input type="text" class="timepicker" id="start_time">
+            <label for="start_time">Start Time</label>
+            </div>
+          <div class="input-field col s6">
+            <input type="text" class="timepicker" id="end_time">
+            <label for="end_time">End Time</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat" onclick="closeEditModal()">Cancel</a>
+        <a class="modal-close waves-effect waves-green btn-flat" onclick="saveEvent()">Save</a>
+      </div>
+    </div>
+</div>
