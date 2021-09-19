@@ -232,17 +232,14 @@ width: 70%;
 justify-content: end;
 }
 
-
 .wellness_component {
   font-size: 25px;
-  font-family: Georgia;
   font-weight: bold;
   positive: relative;
   padding: 5px 5px;
 }
 
 blockquote {
-  background: #f9f9f9;
   border-left: 10px solid #ccc;
   margin: 0.5em 5px;
   padding: 0.5em 15px;
@@ -251,7 +248,6 @@ blockquote {
   font-size: 20px;
 }
 blockquote:before {
-  color: #ccc;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -284,7 +280,6 @@ marquee {
 }
 
 .wellness_news .wellness_title{
-  background: #fff;
   margin: 10px;
   padding: 20px;
   position: relative;
@@ -294,8 +289,6 @@ marquee {
   font-size: 26px;
   margin-top: 50px;
 }
-
-
 
 .wellness_news .wellness_title .wellness_img{
   width: 100px;
