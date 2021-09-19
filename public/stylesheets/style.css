@@ -13,6 +13,10 @@ html, button {
   padding-left: 25px;
 }
 
+.purple-text {
+  color: #8200ff!important;
+}
+
 .sidenav li>a {
   font-size: 18px!important;
   color: #8200ff!important;
