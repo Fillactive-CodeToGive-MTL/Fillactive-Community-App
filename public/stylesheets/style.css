@@ -26,6 +26,7 @@ html, button {
 }
 
 .event-location {
+  display: flex;
   margin-bottom: 8px;
 }
 
@@ -69,6 +70,7 @@ a {
   padding-left: 30px;
   padding-top: 20px;
   padding-bottom: 20px;
+  
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -79,6 +81,10 @@ a {
 
 .modal-content input {
 margin: 10px 0;
+}
+
+.input-label {
+  margin-left: 32px;
 }
 
 .modal {
@@ -108,10 +114,30 @@ margin: 10px 0;
 }
 
 .add-post-btn {
-  border: 2px solid black;
+  display: flex;
+  align-items: center;
   font-size: larger;
   margin-right: 30px;
-  background-color: white;
+  border-radius: 5px;
+  color: #8200ff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.event-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-event-btn {
+  display: flex;
+  align-items: center;
+  box-shadow: #818181;
+  color: #8200ff;
+  font-size: larger;
+  margin-right: 30px;
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
