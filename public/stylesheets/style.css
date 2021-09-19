@@ -74,6 +74,7 @@ form {
 }
 
 .main-feed {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   /* background-image: linear-gradient(#9022f7, #fd7dd0); */
