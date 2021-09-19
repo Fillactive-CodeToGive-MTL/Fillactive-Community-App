@@ -98,3 +98,72 @@ margin: 10px 0;
   font-weight: bold;
   padding: 5px 5px;
 }
+
+
+.feed-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-post-btn {
+  border: 2px solid black;
+  font-size: larger;
+  margin-right: 30px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.post {
+  border: 2px solid black;
+  margin: 20px 30px;
+  background-color: white;
+  border-radius: 5px;
+  width: 75%;
+}
+
+.post-avatar {
+  width: 5%;
+  padding: 5px;
+  margin: 15px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #818181;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid black;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.post-authour {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-authour-name {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.post-date {
+  white-space: nowrap;
+  padding-right: 15px;
+  display: flex;
+  font-size: smaller;
+}
+
+.post-content {
+  padding: 15px;
+}
+
+.post-footer {
+
+}

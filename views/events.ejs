@@ -46,7 +46,6 @@
         document.getElementById("event_loc").value = events[selectedEvent]["location"];
     }
     function saveEvent() {
-        console.log("SAVE")
         document.getElementById("editModal").style.display = "none";
         events[selectedEvent]["title"] = document.getElementById("event_title").value;
         events[selectedEvent]["description"] = document.getElementById("event_desc").value;
@@ -75,8 +74,11 @@
         closeModal();
     }
 
-    function saveEvent(event) {
-        events[selectedEvent][""]
+    function saveEvent() {
+        document.getElementById("editModal").style.display = "none";
+        events[selectedEvent]["title"] = document.getElementById("event_title").value;
+        events[selectedEvent]["description"] = document.getElementById("event_desc").value;
+        events[selectedEvent]["location"] = document.getElementById("event_loc").value;
     }
 
     let selectedEvent = 0;

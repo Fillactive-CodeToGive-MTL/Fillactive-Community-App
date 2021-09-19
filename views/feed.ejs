@@ -1,0 +1,25 @@
+<%- include ./partials/header.ejs %>
+
+<div class="dashboard">
+    <div class="feed-header">
+        <div class="title">YOUR FEED</div>
+        <div class="add-post-btn" onclick="openPostModal()">Add Post</div>
+    </div>
+
+    <%- include ./feed/add_post.ejs %>
+    <%- include ./feed/posts_list.ejs %>
+</div>
+
+<script>
+    function openPostModal() {
+        document.getElementById("addPostModal").style.display = "block";
+    }
+    function closePostModal() {
+        document.getElementById("addPostModal").style.display = "none";
+    }
+    function addPost() {
+        closePostModal();
+        document.getElementById("post_content").value;
+    }
+    var posts = JSON.parse('<%= JSON.stringify(posts_data) %>')
+</script>
