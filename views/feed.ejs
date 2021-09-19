@@ -3,10 +3,10 @@
 <div class="dashboard">
     <div class="feed-header">
         <div class="title">YOUR FEED</div>
-        <div class="add-post-btn" onclick="openPostModal()">Add Post</div>
+        <div class="add-post-btn card" onclick="openPostModal()"><i class="material-icons">create</i> &nbsp;Add Post</div>
     </div>
 
-    <%- include ./feed/add_post.ejs %>
+    <%- include ./feed/add_post_form.ejs %>
     <%- include ./feed/posts_list.ejs %>
 </div>
 

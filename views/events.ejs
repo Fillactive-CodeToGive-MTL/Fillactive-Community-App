@@ -1,12 +1,11 @@
 <%- include ./partials/header.ejs %>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <div class="dashboard">
-<div class="title">EVENTS SCHEDULE</div>
+    <div class="event-header">
+        <div class="title">EVENTS SCHEDULE</div>
+        <div class="add-event-btn card" onclick="openAddModal()"><i class="material-icons">event</i> &nbsp; Add Event</div>
+    </div>
+
 
 <!-- Add to google calendar modal -->
 <div id="modal" class="modal">
@@ -14,7 +13,7 @@
     <h6>You have successfully registered for this event! Would you like to add this to your Google Calendar?</h4>
   </div>
   <div class="modal-footer">
-    <button class="modal-close waves-effect waves-green btn-flat" onclick="addEvent()">Yes</button>
+    <button class="modal-close waves-effect waves-green btn-flat" onclick="addEventToCal()">Yes</button>
     <button class="modal-close waves-effect waves-red btn-flat" onclick="closeModal()">No</button>
   </div>
 </div>
@@ -31,25 +30,44 @@
 
 
 <script>
-    function openModal(event) {
+    function openModal(index) {
         document.getElementById("modal").style.display = "block";
-        selectedEvent = event;
+        selectedIndex = index;
     }
-    function openEditModal(event) {
+    function openEditModal(index) {
         $("label").addClass('active');
         $('.datepicker').datepicker();
         $('.timepicker').timepicker();
-        selectedEvent = event;
+        selectedIndex = index;
         var editModal = document.getElementById("editModal").style.display = "block";
-        document.getElementById("event_title").value = events[selectedEvent]["title"];
-        document.getElementById("event_desc").value = events[selectedEvent]["description"];
-        document.getElementById("event_loc").value = events[selectedEvent]["location"];
+        var event = events[index];
+        document.getElementById("event_title").value = event["title"];
+        document.getElementById("event_desc").value = event["description"];
+        document.getElementById("event_loc").value = event["location"];
+        document.getElementById("event_date").value = event["date"];
+        document.getElementById("start_time").value = event["start_time"];
+        document.getElementById("end_time").value = event["end_time"];
     }
-    function saveEvent() {
+    function openAddModal() {
+        var editModal = document.getElementById("editModal").style.display = "block";
+    }
+    function save() {
         document.getElementById("editModal").style.display = "none";
-        events[selectedEvent]["title"] = document.getElementById("event_title").value;
-        events[selectedEvent]["description"] = document.getElementById("event_desc").value;
-        events[selectedEvent]["location"] = document.getElementById("event_loc").value;
+        var event = events[selectedIndex];
+        event["title"] = document.getElementById("event_title").value;
+        event["description"] = document.getElementById("event_desc").value;
+        event["location"] = document.getElementById("event_loc").value;
+        event["date"] = document.getElementById("event_date").value;
+        event["start_time"] = document.getElementById("start_time").value;
+        event["end_time"] = document.getElementById("end_time").value;
+
+        document.getElementById(`event_title_${selectedIndex}`).innerHTML = document.getElementById("event_title").value;
+        document.getElementById(`event_desc_${selectedIndex}`).innerHTML = document.getElementById("event_desc").value;
+        document.getElementById(`event_loc_${selectedIndex}`).innerHTML = document.getElementById("event_loc").value;
+        document.getElementById(`event_date_${selectedIndex}`).innerHTML = document.getElementById("event_date").value;
+        document.getElementById(`start_time_${selectedIndex}`).innerHTML = document.getElementById("start_time").value;
+        document.getElementById(`end_time_${selectedIndex}`).innerHTML = document.getElementById("end_time").value;
+
     }
     function closeEditModal() {
         document.getElementById("editModal").style.display = "none";
@@ -57,31 +75,30 @@
     function closeModal() {
         document.getElementById("modal").style.display = "none";
     }
-    function addEvent() {
-        console.log(selectedEvent);
-        console.log(events[selectedEvent])
+    function addEventToCal() {
+        console.log(events[selectedIndex])
         let url = "https://calendar.google.com/calendar/event?action=TEMPLATE&dates=";
-        url += events[selectedEvent]["start"].replaceAll("-","").replaceAll(":","");
+        url += events[selectedIndex]["start"].replaceAll("-","").replaceAll(":","");
         url += "%2F";
-        url += events[selectedEvent]["end"].replaceAll("-","").replaceAll(":","");
+        url += events[selectedIndex]["end"].replaceAll("-","").replaceAll(":","");
         url += "&text=";
-        url += events[selectedEvent]["title"].replaceAll(" ","+");
+        url += events[selectedIndex]["title"].replaceAll(" ","+");
         url += "&details=";
-        url += events[selectedEvent]["description"].replaceAll(" ","+");
+        url += events[selectedIndex]["description"].replaceAll(" ","+");
         url += "&location=";
-        url += events[selectedEvent]["location"].replaceAll(" ","+");
+        url += events[selectedIndex]["location"].replaceAll(" ","+");
         window.open(url, '_blank').focus();
         closeModal();
     }
 
     function saveEvent() {
         document.getElementById("editModal").style.display = "none";
-        events[selectedEvent]["title"] = document.getElementById("event_title").value;
-        events[selectedEvent]["description"] = document.getElementById("event_desc").value;
-        events[selectedEvent]["location"] = document.getElementById("event_loc").value;
+        events[selectedIndex]["title"] = document.getElementById("event_title").value;
+        events[selectedIndex]["description"] = document.getElementById("event_desc").value;
+        events[selectedIndex]["location"] = document.getElementById("event_loc").value;
     }
 
-    let selectedEvent = 0;
+    let selectedIndex = 0;
 
     var events = JSON.parse('<%- JSON.stringify(events_data)%>')
 

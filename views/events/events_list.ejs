@@ -8,12 +8,12 @@
       <span class="card-title"><%= event.title %></span>
       <p><%= event.description %></p>
       <br />
-      <div class="event-location">
+      <div id='event_loc_<%= i %>'class="event-location">
         <i class="event-icon material-icons">location_on</i>&emsp;<%=
         event.location %><br />
       </div>
       <i class="event-icon material-icons">access_time</i>&emsp;<%= event.date
-      %>, <%= event.times %>
+      %>, <%= event.start_time %> - <%= event.end_time %>
     </div>
     <div class="card-action">
       <a onclick="openModal('<%= i %>')">Going</a>
@@ -24,15 +24,16 @@
   <% break; case 'teacher' : case 'fillactive_admin': %>
   <div class="card">
     <div class="card-content">
-      <span class="card-title"><%= event.title %></span>
-      <p><%= event.description %></p>
+      <span id='event_title_<%= i %>' class="card-title"><%= event.title %></span>
+      <p id='event_desc_<%= i %>'><%= event.description %></p>
       <br />
       <div class="event-location">
-        <i class="event-icon material-icons">location_on</i>&emsp;<%=
-        event.location %><br />
+        <i class="event-icon material-icons">location_on</i>&emsp; <div id='event_loc_<%= i %>'><%=
+        event.location %></div><br />
       </div>
-      <i class="event-icon material-icons">access_time</i>&emsp;<%= event.date
-      %>, <%= event.times %>
+      <div style="display: flex;">
+        <i class="event-icon material-icons">access_time</i>&emsp;<div id='event_date_<%= i %>'><%= event.date%></div>, &nbsp;<div id='start_time_<%= i %>'><%= event.start_time %></div>&nbsp; - &nbsp;<div id='end_time_<%= i %>'> <%= event.end_time %> &nbsp;</div>
+      </div>
     </div>
     <div class="card-action">
       <a onclick="openEditModal('<%= i %>')">Edit</a>

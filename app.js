@@ -42,4 +42,6 @@ app.use(function(err, req, res, next) {
 // user role will be changed later from login
 app.locals.user_role = 'student'
 
+app.locals.tab = 'home'
+
 module.exports = app;
