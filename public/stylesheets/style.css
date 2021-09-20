@@ -188,6 +188,11 @@ margin: 10px 0;
   justify-content: space-between;
 }
 
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .wellness_component {
   font-family: 'Roboto', sans-serif!important;
   font-size: 25px;
@@ -304,6 +309,7 @@ blockquote, #health-title, #health-body {
 }
 
 .post-header {
+  background-color: #fdcdec;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -385,5 +391,11 @@ i.material-icons.reactions {
 a.react-container {
   text-align: center;
   display: inherit;
-  color: black!important;
+  color: white!important;
+  text-shadow:
+  -1px -1px 3px #8503f5,
+  1px -1px 3px #8503f5,
+  -1px 1px 3px #8503f5,
+  1px 1px 3px #8503f5;
+  margin-right: 20px;
 }

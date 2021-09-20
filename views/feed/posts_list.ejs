@@ -13,7 +13,11 @@
                 <div class="card-content">
                     <%= post.content %>
                 </div>
+
                 <div class="post-footer">
+                    <div class="card-action">
+                        <a onclick="openEditModal('<%= i %>')">Comment<a>
+                      </div>
                     <a class="react-container">
                         <i onClick="myfunction(this)"class="material-icons reactions">favorite</i>
                     </a>
