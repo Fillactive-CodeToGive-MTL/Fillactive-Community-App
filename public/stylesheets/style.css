@@ -85,6 +85,7 @@ form {
   flex-direction: row;
   /* background-image: linear-gradient(#9022f7, #fd7dd0); */
   background-image: url(../images/background-2.jpg);
+  background-size: cover;
 }
 
 .main-wellness {
