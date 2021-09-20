@@ -72,6 +72,7 @@ form {
 }
 
 .main {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   /* background-image: linear-gradient(#9022f7, #fd7dd0); */
@@ -88,6 +89,7 @@ form {
 }
 
 .main-events {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   /* background-image: linear-gradient(#9022f7, #fd7dd0); */
@@ -96,8 +98,10 @@ form {
 }
 
 .main-wellness {
+  height: 100vh;
   display: flex;
   flex-direction: row;
+  background-size: cover;
   /* background-image: linear-gradient(#9022f7, #fd7dd0); */
   background-image: url(../images/background-3.jpg);
 }
@@ -201,6 +205,7 @@ margin: 10px 0;
   font-weight: bold;
   padding: 5px 5px;
   color: white;
+  
 }
 
 blockquote, #health-title, #health-body {
@@ -351,6 +356,9 @@ div#login_form {
 .login-form-page {
   background-image: url('../images/background-2.jpg');
   background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
 } 
 
 .login-dashboard {
