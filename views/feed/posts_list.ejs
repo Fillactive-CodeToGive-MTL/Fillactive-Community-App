@@ -1,0 +1,40 @@
+<!-- Static list of allevents -->
+<div class="events">
+    <!-- for each event in the events data -->
+   <% posts_data.forEach((post, i) => { %>
+            <div class="card">
+                <div class="post-header">
+                    <img class="post-avatar" src="/images/avatar-3.png"/>
+                    <div class="post-authour">
+                        <div class="post-authour-name"><%= post.authour.first_name %> <%= post.authour.last_name %></div>
+                        <div class="post-date"> <%= post.date %> <div style="color: #818181"> &emsp;  <%= post.time %></div></div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <%= post.content %>
+                </div>
+                <div class="post-footer">
+                    <a class="react-container">
+                        <i onClick="myfunction(this)"class="material-icons reactions">favorite</i>
+                    </a>
+                    
+                </div>
+            </div>
+           
+   <% }); %>
+
+   <script>
+       function myfunction(e){
+        if (e.style.one!== 2){
+            e.style='color:red'
+            e.style.one =2
+        }
+        else{
+            e.style='color:black'
+            e.style.one =1
+        }
+        
+       }
+   </script>
+
+</div>

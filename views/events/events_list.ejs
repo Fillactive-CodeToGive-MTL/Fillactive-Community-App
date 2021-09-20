@@ -1,0 +1,75 @@
+<!-- Static list of allevents -->
+<div class="events">
+  <!-- for each event in the events data -->
+  <% events_data.forEach((event, i) => { %> <% switch (user_role) { case
+  'student' : %>
+  <div class="card" style="width: 70%;">
+    <div class="card-content">
+      <span class="card-title"><%= event.title %></span>
+      <p><%= event.description %></p>
+      <br />
+      <div id='event_loc_<%= i %>'class="event-location">
+        <i class="event-icon material-icons">location_on</i>&emsp;<%=
+        event.location %><br />
+      </div>
+      <i class="event-icon material-icons">access_time</i>&emsp;<%= event.date
+      %>, <%= event.start_time %> - <%= event.end_time %>
+    </div>
+    <div class="event-footer">
+      <div class="card-action">
+        <a onclick="openModal('<%= i %>')">Going</a>
+        <a onclick="">Can't Go</a>
+        <a onclick="">Maybe</a>
+      </div>
+      <div class="participants">
+        <i style="color: green" class="material-icons">check_circle</i>
+        &nbsp;
+        <div style="color: green;"><%= event.participants.going %></div>
+        &nbsp;
+        <i style="color: red" class="material-icons">cancel</i>
+        &nbsp;
+        <div style="color: red;"><%= event.participants.cant_go %></div>
+        &nbsp;
+        <i style="color: orange; " class="material-icons">help</i>
+        &nbsp;
+        <div style="color: orange;"><%= event.participants.no_response %></div>
+      </div>
+      </div>
+  </div>
+  <% break; case 'teacher' : case 'fillactive_admin': %>
+  <div class="card">
+    <div class="card-content">
+      <span id='event_title_<%= i %>' class="card-title"><%= event.title %></span>
+      <p id='event_desc_<%= i %>'><%= event.description %></p>
+      <br />
+      <div class="event-location">
+        <i class="event-icon material-icons">location_on</i>&emsp; <div id='event_loc_<%= i %>'><%=
+        event.location %></div><br />
+      </div>
+      <div style="display: flex;">
+        <i class="event-icon material-icons">access_time</i>&emsp;<div id='event_date_<%= i %>'><%= event.date%></div>, &nbsp;<div id='start_time_<%= i %>'><%= event.start_time %></div>&nbsp; - &nbsp;<div id='end_time_<%= i %>'> <%= event.end_time %> &nbsp;</div>
+      </div>
+    </div>
+    <div class="event-footer">
+      <div class="card-action">
+        <a onclick="openEditModal('<%= i %>')">Edit</a>
+        <a onclick="updateStatus()">Cancel</a>
+        <a onclick="updateStatus()">Set Reminder</a>
+      </div>
+      <div class="participants">
+        <i style="color: green" class="material-icons">check_circle</i>
+        &nbsp;
+        <div style="color: green;"><%= event.participants.going %></div>
+        &nbsp;
+        <i style="color: red" class="material-icons">cancel</i>
+        &nbsp;
+        <div style="color: red;"><%= event.participants.cant_go %></div>
+        &nbsp;
+        <i style="color: orange; " class="material-icons">help</i>
+        &nbsp;
+        <div style="color: orange;"><%= event.participants.no_response %></div>
+      </div>
+    </div>
+  </div>
+  <% break; } %> <% }); %>
+</div>

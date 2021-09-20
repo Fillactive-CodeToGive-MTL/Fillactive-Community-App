@@ -1,0 +1,64 @@
+<%- include ./partials/header.ejs %>
+
+<div class="main-wellness">
+
+<div class="wellness-page">
+  <div class="wellness-header">
+    <div class="title">WELLNESS HUB</div>
+    <% if (user_role == 'teacher') { %><div class="add-event-btn card-small" onclick="openAddWellnessModal()"><i class="material-icons">create</i> &nbsp; Add Post</div><%}; %>
+  </div>
+  <%- include ./wellness/add_wellness_post.ejs %>
+    <div class="wellness_component"> Quote of the week</div>
+        <blockquote class="blockquote">
+            Nothing can dim the light that comes from within.
+            <br>&emsp;&emsp;&emsp;- Maya Angelou
+        </blockquote>
+
+    <div class="wellness_component"> Recent Posts</div>
+    
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="https://www.healthxchange.sg/sites/hexassets/Assets/wellness/ten-ways-achieve-mental-wellness-b.jpg" alt="image">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Exercise & Wellness</div>
+            <p> The Mental Health Benefits of Exercise</p>
+          </div>
+          <div class="card-action">
+            <a href="https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm" target="_blank" rel="noopener noreferrer">Read more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="https://www.gardendesign.com/pictures/images/263x300Exact_62x0/site_3/helianthus-yellow-flower-pixabay_11863.jpg" alt="image">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Calling all sunflower fans</div>
+            <p> Free weekend harvest hoping to shine light on mental wellness</p>
+          </div>
+          <div class="card-action">
+            <a href="https://www.winchesterstar.com/winchester_star/calling-all-sunflower-fans-free-weekend-harvest-hoping-to-shine-light-on-mental-wellness/article_659e5922-0bc4-5c71-9bbd-da74de411deb.html" target="_blank" rel="noopener noreferrer">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wellness_component">News</div>
+    <br>
+    <h5 id = "health-title">MENTAL HEALTH WEEK</h5>
+    <p id="health-body">Learn more about Mental Health Awareness Week!</p>
+    <a class="btn waves-effect waves-light white">More Info</a>
+</div>
+
+<script>
+  function openAddWellnessModal() {
+    document.getElementById("wellnessModal").style.display = "block";
+  }
+  function closeWellnessModal() {
+    document.getElementById("wellnessModal").style.display = "none";
+  }
+</script>

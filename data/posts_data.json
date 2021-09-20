@@ -1,0 +1,40 @@
+[
+    {   
+        "id": 1, 
+        "type": "post",
+        "authour": {
+            "first_name": "Pam",
+            "last_name": "Beasly",
+            "user_role": "student"
+        },
+        "date": "Sept 22, 2021",
+        "time": "3:35 pm",
+        "content": "Just went for a walk today. My face is red, I'm sweaty, and my hair is messy and I feel amazing!"
+    },
+    {   
+        "id": 2,
+        "type": "post", 
+        "authour": {
+            "first_name": "Meredith",
+            "last_name": "Palmer",
+            "user_role": "student"
+        },
+        "date": "Sept 19, 2021",
+        "time": "8:45 am",
+        "content": "Just wanted to hop on here an say that you girls are all beautiful just the way you are <3"
+    },
+    {   
+        "id": 2, 
+        "type": "challenge",
+        "title": "3 km walk",
+        "authour": {
+            "first_name": "Jan",
+            "last_name": "Levinson",
+            "user_role": "teacher"
+        },
+        "date": "Sept 15, 2021",
+        "time": "1:30 pm",
+        "content": "This week's challenges are to go on a 3 km walk around your neighbourhood, perform a 5 min meditation, and do 30 jumping jacks. Find some other girls and do them together!"
+    }
+
+]

@@ -38,4 +38,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// setup application-level data points
+// user role will be changed later from login
+app.locals.user_role = 'student'
+
+app.locals.tab = 'home'
+
 module.exports = app;

@@ -1,0 +1,28 @@
+<ul id="slide-out" class="sidenav sidenav-fixed" style="background-image: linear-gradient(#fff, #c6b9f7);
+">
+  <a href="/"><img src="/images/fitspirit-logo.jpg" width="100%"></a>
+  <li class="tab"><a class="sidenav-close" id="feed_tab" href="/feed"><i class="material-icons purple-text">forum</i>Feed</a></li>
+  <li class="tab"><a class="sidenav-close" id="events" href="/events"><i class="material-icons purple-text">event</i>Events</a></li>
+  <li class="tab"><a class="sidenav-close" id="wellness_tab" href="/wellness-hub"><i class="material-icons purple-text">local_florist</i>Wellness Hub</a></li>
+  <li class="tab" id="logout_tab"><a class="sidenav-close" href="/"><i class="material-icons purple-text">logout</i>Logout</a></li>
+</ul>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  })
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+    var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/"));
+    console.log("pgurl: "+pgurl);
+    $(".sidenav li a").each(function(){
+      $(this).parent().removeClass("active");
+      var tab = $(this).attr("href");
+      console.log("tab: "+tab);
+      if($(this).attr("href") == pgurl || $(this).attr("href") == ''){
+        $(this).parent().addClass("active");
+      }
+    })
+  });
+</script>

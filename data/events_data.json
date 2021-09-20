@@ -1,0 +1,45 @@
+[{
+        "title":"Zumba Session",
+        "description":"This is a description of a Zumba session which should be really fun and cool.",
+        "location":"Back field",
+        "date": "Sep 21, 2021",
+        "start_time": "4:30 pm",
+        "end_time": "5:00 pm",
+        "start":"2021-09-21T20:30:00Z",
+        "end":"2021-09-21T21:00:00Z",
+        "participants": {
+            "going": 33,
+            "cant_go": 7,
+            "no_response": 12 
+        }
+    },
+    {
+        "title":"Soccer",
+        "description":"Come join us to play some soccer on the back field!",
+        "location":"Back field",
+        "date": "Sep 23, 2021",
+        "start_time": "3:30 pm",
+        "end_time": "4:30 pm",
+        "start":"2021-09-23T19:30:00Z",
+        "end":"2021-09-23T20:30:00Z",
+        "participants": {
+            "going": 18,
+            "cant_go": 8,
+            "no_response": 24 
+        }
+    },
+    {
+        "title":"Hiking Trip",
+        "description":"Come join Ms. Smith and the other students on a hiking trip in Gatineau Park.",
+        "location":"Gatineau Park",
+        "date": "Sep 25, 2021",
+        "start_time": "8:00 am",
+        "end_time": "2:00 pm",
+        "start":"2021-09-25T12:00:00Z",
+        "end":"2021-09-25T18:00:00Z",
+        "participants": {
+            "going": 15,
+            "cant_go": 5,
+            "no_response": 30 
+        }
+    }]
