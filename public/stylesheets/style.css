@@ -354,4 +354,17 @@ h1#login-form-title {
   font-family: Raleway, Poppins, sans-serif;
   color: darkmagenta;
   font-size: 3.5rem;
+
+i.material-icons.reactions {
+  font-size: 2em;
+  text-align: center;
+  /* margin: 0 auto; */
+  display: inherit;
+  padding-bottom: 0.5em;
+}
+
+a.react-container {
+  text-align: center;
+  display: inherit;
+  color: black!important;
 }

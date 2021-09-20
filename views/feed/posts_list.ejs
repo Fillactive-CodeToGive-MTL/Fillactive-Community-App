@@ -14,9 +14,27 @@
                     <%= post.content %>
                 </div>
                 <div class="post-footer">
+                    <a class="react-container">
+                        <i onClick="myfunction(this)"class="material-icons reactions">favorite</i>
+                    </a>
+                    
                 </div>
             </div>
            
    <% }); %>
+
+   <script>
+       function myfunction(e){
+        if (e.style.one!== 2){
+            e.style='color:red'
+            e.style.one =2
+        }
+        else{
+            e.style='color:black'
+            e.style.one =1
+        }
+        
+       }
+   </script>
 
 </div>
