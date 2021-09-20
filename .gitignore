@@ -61,6 +61,6 @@ typings/
 .next
 
 # .DS_Store file added in directory on macOS
-.DS_Store
+data/.DS_Store
 
 .vscode
