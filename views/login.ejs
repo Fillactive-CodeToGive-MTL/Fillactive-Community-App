@@ -28,12 +28,14 @@
       </ul>
     </div>
 
-    <div class="col s9 valign-wrapper" style="height: 50em;">
+    <div class="col s9 valign-wrapper login-dashboard" style="height: 50em;">
+
+
+      <div id="login-form-title" class="title">FILLACTIVE COMMUNITY APP</div>
+
+      <div class="login-form-title">Welcome to the Fillactive Community, we are so happy you're here! To get started, please sign in using your email and password. If you don't have an account, you can create one by clicking register! </div>
 
       <div class="row" id="login_form">
-
-      <h1 id="login-form-title">Fillactive Community App</h1>
-
       <form action="/users/userlogin" method="POST" id="user_login" class="col s12">
         <div class="row">
           <% if (loginerror) { %>
@@ -43,20 +45,23 @@
           <% } %> 
           <div class="input-field col s8 center">
             <input id="username" name="username" type="email" class="validate">
-            <label for="username" class="login-form-label">username</label>
+            <label for="username" class="login-form-label" style="color: black;">email</label>
           </div>
           <div class="input-field col s8">
             <input id="password" name="password" type="password" class="validate">
-            <label for="password" class="login-form-label">password</label>
+            <label for="password" class="login-form-label" style="color: black;">password</label>
           </div>
         </div>
         <div class="row">
-          <button class="btn waves-effect waves-light roleBtn" type="submit">Submit</button>
+          <button class="btn waves-effect waves-light roleBtn" type="submit">Login</button>
         </div>
+        <div style="display: flex;"><div>Don't have an account?</div>&nbsp;<a>Register here!</a></div>
       </form>
     </div>
-
     </div>
   </div>
 </div>
 <%- include ./partials/footer.ejs %>
+
+<script>
+</script>

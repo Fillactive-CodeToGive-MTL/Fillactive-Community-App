@@ -333,13 +333,8 @@ blockquote, #health-title, #health-body {
   padding: 15px;
 }
 
-label.login-form-label {
-  color: #8200ff !important;
-  font-family: 'Montserrat', 'Poppins', sans-serif;
-}
-
 div#login_form {
-  background-color: rgba(147, 30, 190, 0.28);
+  background-color: rgba(253, 205, 236, 0.7);
   padding: 1em;
   border-radius: 25px;
 }
@@ -349,11 +344,16 @@ div#login_form {
   background-size: cover;
 } 
 
-h1#login-form-title {
+.login-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-title {
   text-shadow: 2px 2px 4px whitesmoke;
   font-family: Raleway, Poppins, sans-serif;
   color: darkmagenta;
-  font-size: 3.5rem;
+  font-size: 1.5rem;
 }
 
 a#fitspirit-link {
