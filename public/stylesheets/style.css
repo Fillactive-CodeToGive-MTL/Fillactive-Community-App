@@ -29,6 +29,12 @@ html, button {
   text-transform: uppercase;
 }
 
+li#logout_tab {
+  position: absolute;
+  bottom: 7em;
+  width: 100%;
+}
+
 .event-icon {
   font-size: 1.5rem!important;
   vertical-align: bottom;
