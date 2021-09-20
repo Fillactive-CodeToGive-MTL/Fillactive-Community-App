@@ -364,6 +364,16 @@ a#fitspirit-link {
   color: #8503f5 !important;
 }
 
+a#fillactive-community-poster {
+  font-family: Raleway;
+  color: #8503f5 !important;
+  text-shadow: 1px 1px 1px navajowhite;
+  padding: 1em;
+  background-color: rgba(176, 0, 189, 0.16);
+  border-radius: 15px;
+  font-weight: bold !important;
+}
+
 i.material-icons.reactions {
   font-size: 2em;
   text-align: center;
