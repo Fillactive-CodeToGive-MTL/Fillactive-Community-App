@@ -133,6 +133,12 @@ a {
 
 }
 
+.commentList{
+  padding-left:2rem;
+  padding-bottom: 0.75rem;
+}
+
+
 .title {
   font-size: 40px;
   font-weight: bold;
