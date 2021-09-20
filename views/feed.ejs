@@ -29,6 +29,8 @@
                     </div>
                 </div>
             </div>
+            <% switch (user_role) { 
+                case 'student' : %>
             <div class="card challenge">
                 <div class="card-content">
                     <span class="card-title" style="font-weight: bold;">Weekly Challenges:</span>
@@ -48,6 +50,27 @@
                     </div>
                 </div>
             </div>
+            <% break; case 'teacher' :%>
+            <div class="card challenge">
+                <div class="card-content">
+                    <span class="card-title" style="font-weight: bold;">Weekly Challenges:</span>
+                    <div class="challenges">
+                        <div class="guideline-row">
+                            <i id="challenge_btn_0" class="material-icons" style="cursor: pointer;" onclick="">delete</i>
+                            <input class="validate" style="margin-left: 10px;" value="3 km walk"></input>
+                        </div>
+                        <div class="guideline-row">
+                            <i id="challenge_btn_1" class="material-icons" style="cursor: pointer;" onclick="">delete</i>
+                            <input class="validate" style="margin-left: 10px;" value="5 min meditation"></input>
+                        </div>
+                        <div class="guideline-row">
+                            <i id="challenge_btn_2" class="material-icons" style="cursor: pointer;" onclick="">add</i>
+                            <input placeholder="Add a challenge..." style="margin-left: 10px;" class="validate"></input>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <% break; } %>
         </div>
         </div>
     </div>
