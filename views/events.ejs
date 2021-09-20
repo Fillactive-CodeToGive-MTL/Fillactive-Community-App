@@ -5,8 +5,9 @@
 <div class="dashboard">
     <div class="event-header">
         <div class="title">EVENTS SCHEDULE</div>
-        <a id="fillactive-community-poster" href="https://drive.google.com/file/d/1MK5KUOati88X_M-ycWQ50vYvSKBnIL0S/view?usp=sharing" target="blank">Download Fillactive Community Poster</a>
-        <% if (user_role == 'teacher') { %><div class="add-event-btn card-small" onclick="openAddModal()"><i class="material-icons">event</i> &nbsp; Add Event</div><%}; %>
+        <% if (user_role == 'teacher') { %>
+        <a id="fillactive-community-poster" href="https://drive.google.com/file/d/1MK5KUOati88X_M-ycWQ50vYvSKBnIL0S/view?usp=sharing" target="blank" style="display: flex; align-items: center; white-space: nowrap;"><i class="material-icons">download</i>&nbsp;Download Fillactive Community Poster</a>
+        <div class="add-event-btn card-small" onclick="openAddModal()"><i class="material-icons">event</i> &nbsp; Add Event</div><%}; %>
     </div>
 
 
