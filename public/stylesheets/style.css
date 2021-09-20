@@ -330,3 +330,16 @@ blockquote, #health-title, #health-body {
   padding: 15px;
 }
 
+i.material-icons.reactions {
+  font-size: 2em;
+  text-align: center;
+  /* margin: 0 auto; */
+  display: inherit;
+  padding-bottom: 0.5em;
+}
+
+a.react-container {
+  text-align: center;
+  display: inherit;
+  color: black!important;
+}
