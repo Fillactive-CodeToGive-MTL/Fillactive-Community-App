@@ -354,6 +354,15 @@ h1#login-form-title {
   font-family: Raleway, Poppins, sans-serif;
   color: darkmagenta;
   font-size: 3.5rem;
+}
+
+a#fitspirit-link {
+  font-family: 'Koh Santepheap', Raleway, sans-serif;
+  position: relative;
+  top: -4em;
+  margin-left: 6em;
+  color: #8503f5 !important;
+}
 
 i.material-icons.reactions {
   font-size: 2em;
