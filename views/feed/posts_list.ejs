@@ -1,5 +1,7 @@
 <!-- Static list of allevents -->
 <div class="events">
+    <script>
+    </script>
     <!-- for each event in the events data -->
    <% posts_data.forEach((post, i) => { %>
             <div class="card">
@@ -15,16 +17,26 @@
                 </div>
                 <div class="post-footer">
                     <a class="react-container">
-                        <i onClick="myfunction(this)"class="material-icons reactions">favorite</i>
+                        <i onClick="liking(this)"class="material-icons reactions">favorite</i>
+                    </a>
+                </div>
+                <div class="post-comments">
+                    <input type="text" id="myInput" placeholder="Congrats..">
+                    <a class="addBtn">
+                        <p onClick="newElement(this)" class="material-icons post-add">add</p>
                     </a>
                     
                 </div>
+
+                <ul id="1">
+
+                </ul>
             </div>
            
    <% }); %>
 
    <script>
-       function myfunction(e){
+       function liking(e){
         if (e.style.one!== 2){
             e.style='color:red'
             e.style.one =2
@@ -33,7 +45,17 @@
             e.style='color:black'
             e.style.one =1
         }
-        
+       }
+
+       function newElement(e, p){
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            console.log(inputValue)
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            var text = document.createTextNode("\u00D7");
+            document.getElementById("1").appendChild(li)
+            document.getElementById("myInput").value = "";
        }
    </script>
 

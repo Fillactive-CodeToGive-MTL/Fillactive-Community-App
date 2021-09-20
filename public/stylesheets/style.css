@@ -365,7 +365,7 @@ a#fitspirit-link {
 }
 
 i.material-icons.reactions {
-  font-size: 2em;
+  font-size: 1.75em;
   text-align: center;
   /* margin: 0 auto; */
   display: inherit;
@@ -376,4 +376,10 @@ a.react-container {
   text-align: center;
   display: inherit;
   color: black!important;
+}
+
+p.material-icons.post-add {
+  margin: 0 auto;
+  position: absolute;
+  right: 1.5em;
 }
