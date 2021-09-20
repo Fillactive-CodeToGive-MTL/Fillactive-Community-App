@@ -3,7 +3,11 @@
 <div class="main-wellness">
 
 <div class="wellness-page">
+  <div class="wellness-header">
     <div class="title">WELLNESS HUB</div>
+    <% if (user_role == 'teacher') { %><div class="add-event-btn card-small" onclick="openAddWellnessModal()"><i class="material-icons">create</i> &nbsp; Add Post</div><%}; %>
+  </div>
+  <%- include ./wellness/add_wellness_post.ejs %>
     <div class="wellness_component"> Quote of the week</div>
         <blockquote class="blockquote">
             Nothing can dim the light that comes from within.
@@ -49,3 +53,12 @@
     <p id="health-body">Learn more about Mental Health Awareness Week!</p>
     <a class="btn waves-effect waves-light white">More Info</a>
 </div>
+
+<script>
+  function openAddWellnessModal() {
+    document.getElementById("wellnessModal").style.display = "block";
+  }
+  function closeWellnessModal() {
+    document.getElementById("wellnessModal").style.display = "none";
+  }
+</script>

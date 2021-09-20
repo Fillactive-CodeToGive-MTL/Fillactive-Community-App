@@ -9,7 +9,48 @@
     </div>
 
     <%- include ./feed/add_post_form.ejs %>
-    <%- include ./feed/posts_list.ejs %>
+    <div class="main-section">
+        <%- include ./feed/posts_list.ejs %>
+        <div class="right-side">
+            <div class="card guidelines">
+                <div class="card-content">
+                    <span class="card-title" style="font-weight: bold;">Reminders:</span>
+                    <div class="guideline-row">
+                        <i class="material-icons" style="color: #f3504a;">volunteer_activism</i>
+                        <div style="margin-left: 10px;">This is a judgement free zone</div>
+                    </div>
+                    <div class="guideline-row">
+                        <i class="material-icons" style="color: #cc4af3;">people</i>
+                        <div style="margin-left: 10px;">We're in this together!</div>
+                    </div>
+                    <div class="guideline-row">
+                        <i class="material-icons" style="color: #694af3;">monitor_heart</i>
+                        <div style="margin-left: 10px;">Stay healthy, stay active!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card challenge">
+                <div class="card-content">
+                    <span class="card-title" style="font-weight: bold;">Weekly Challenges:</span>
+                    <div class="challenges">
+                        <div class="guideline-row">
+                            <i id="challenge_btn_0" class="material-icons" style="cursor: pointer;" onclick="challengeCompleted(0)">radio_button_unchecked</i>
+                            <div style="margin-left: 10px; font-size: larger;">3 km walk</div>
+                        </div>
+                        <div class="guideline-row">
+                            <i id="challenge_btn_1" class="material-icons" style="cursor: pointer;" onclick="challengeCompleted(1)">radio_button_unchecked</i>
+                            <div style="margin-left: 10px; font-size: larger;">5 min meditation</div>
+                        </div>
+                        <div class="guideline-row">
+                            <i id="challenge_btn_2" class="material-icons" style="cursor: pointer;" onclick="challengeCompleted(2)">radio_button_unchecked</i>
+                            <div style="margin-left: 10px; font-size: larger;">30 jumping jacks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -22,6 +63,10 @@
     function addPost() {
         closePostModal();
         document.getElementById("post_content").value;
+    }
+    function challengeCompleted(index) {
+        document.getElementById(`challenge_btn_${index}`).innerHTML = "task_alt";
+        document.getElementById(`challenge_btn_${index}`).style.color = "#4af358";
     }
     var posts = JSON.parse('<%= JSON.stringify(posts_data) %>')
 </script>

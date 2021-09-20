@@ -41,7 +41,6 @@ html, button {
 
 .card {
   margin-right: 20px!important;
-  width: 70%;
 }
 
 .card-small {
@@ -93,6 +92,13 @@ form {
   flex-direction: row;
   /* background-image: linear-gradient(#9022f7, #fd7dd0); */
   background-image: url(../images/background-3.jpg);
+}
+
+.wellness-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .feed-tab {
@@ -161,7 +167,7 @@ margin: 10px 0;
 
 .modal {
   margin-left: 400px;
-  margin-top: 200px;
+  margin-top: 0px;
   z-index: 9999;
 }
 
@@ -199,6 +205,41 @@ blockquote, #health-title, #health-body {
   color: #8200ff;
   padding: 5px;
   cursor: pointer;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.guidelines {
+  height: 100%;
+  margin-left: 30px;
+}
+
+.challenge {
+  height: 100%;
+  margin-left: 30px;
+}
+
+.challenges {
+  display: flex;
+  flex-direction: column;
+}
+
+.guideline-row {
+  display: flex;
+  margin: 10px 0;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: row;
+
 }
 
 .event-header {
