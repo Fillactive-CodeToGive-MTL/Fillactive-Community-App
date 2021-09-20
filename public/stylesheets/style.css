@@ -176,6 +176,11 @@ margin: 10px 0;
   cursor: pointer;
 }
 
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .wellness_component {
   font-family: 'Roboto', sans-serif!important;
   font-size: 25px;
@@ -247,6 +252,16 @@ blockquote, #health-title, #health-body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.participants {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.participant-val {
+  margin: 0 5px;
 }
 
 .add-event-btn {

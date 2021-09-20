@@ -15,11 +15,26 @@
       <i class="event-icon material-icons">access_time</i>&emsp;<%= event.date
       %>, <%= event.start_time %> - <%= event.end_time %>
     </div>
-    <div class="card-action">
-      <a onclick="openModal('<%= i %>')">Going</a>
-      <a onclick="">Can't Go</a>
-      <a onclick="">Maybe</a>
-    </div>
+    <div class="event-footer">
+      <div class="card-action">
+        <a onclick="openModal('<%= i %>')">Going</a>
+        <a onclick="">Can't Go</a>
+        <a onclick="">Maybe</a>
+      </div>
+      <div class="participants">
+        <i style="color: green" class="material-icons">check_circle</i>
+        &nbsp;
+        <div style="color: green;"><%= event.participants.going %></div>
+        &nbsp;
+        <i style="color: red" class="material-icons">cancel</i>
+        &nbsp;
+        <div style="color: red;"><%= event.participants.cant_go %></div>
+        &nbsp;
+        <i style="color: orange; " class="material-icons">help</i>
+        &nbsp;
+        <div style="color: orange;"><%= event.participants.no_response %></div>
+      </div>
+      </div>
   </div>
   <% break; case 'teacher' : case 'fillactive_admin': %>
   <div class="card">
@@ -35,10 +50,25 @@
         <i class="event-icon material-icons">access_time</i>&emsp;<div id='event_date_<%= i %>'><%= event.date%></div>, &nbsp;<div id='start_time_<%= i %>'><%= event.start_time %></div>&nbsp; - &nbsp;<div id='end_time_<%= i %>'> <%= event.end_time %> &nbsp;</div>
       </div>
     </div>
-    <div class="card-action">
-      <a onclick="openEditModal('<%= i %>')">Edit</a>
-      <a onclick="updateStatus()">Cancel</a>
-      <a onclick="updateStatus()">Set Reminder</a>
+    <div class="event-footer">
+      <div class="card-action">
+        <a onclick="openEditModal('<%= i %>')">Edit</a>
+        <a onclick="updateStatus()">Cancel</a>
+        <a onclick="updateStatus()">Set Reminder</a>
+      </div>
+      <div class="participants">
+        <i style="color: green" class="material-icons">check_circle</i>
+        &nbsp;
+        <div style="color: green;"><%= event.participants.going %></div>
+        &nbsp;
+        <i style="color: red" class="material-icons">cancel</i>
+        &nbsp;
+        <div style="color: red;"><%= event.participants.cant_go %></div>
+        &nbsp;
+        <i style="color: orange; " class="material-icons">help</i>
+        &nbsp;
+        <div style="color: orange;"><%= event.participants.no_response %></div>
+      </div>
     </div>
   </div>
   <% break; } %> <% }); %>
