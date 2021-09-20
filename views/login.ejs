@@ -2,6 +2,11 @@
 <html>
 <head>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- import fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway&display=swap" rel="stylesheet">
 <!--Import materialize.css-->
 <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
@@ -14,20 +19,20 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-
-<div class="container">
-  <div class="row">
+<div class="login-form-page">
+  <div class="row s12">
     <div class="col s3">
       <ul id="slide-out" class="sidenav sidenav-fixed">
         <a href="/"><img src="/images/fitspirit-logo.jpg" width="300px"></a>
       </ul>
     </div>
 
-  
     <div class="col s9 valign-wrapper" style="height: 50em;">
 
+      <div class="row" id="login_form">
 
-      <div class="row">
+      <h1 id="login-form-title">Fillactive Community App</h1>
+
       <form action="/users/userlogin" method="POST" id="user_login" class="col s12">
         <div class="row">
           <% if (loginerror) { %>
@@ -37,11 +42,11 @@
           <% } %> 
           <div class="input-field col s8 center">
             <input id="username" name="username" type="email" class="validate">
-            <label for="username">username</label>
+            <label for="username" class="login-form-label">username</label>
           </div>
           <div class="input-field col s8">
             <input id="password" name="password" type="password" class="validate">
-            <label for="password">password</label>
+            <label for="password" class="login-form-label">password</label>
           </div>
         </div>
         <div class="row">
@@ -53,5 +58,4 @@
     </div>
   </div>
 </div>
-
 <%- include ./partials/footer.ejs %>

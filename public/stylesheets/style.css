@@ -197,7 +197,10 @@ margin: 10px 0;
 }
 
 blockquote, #health-title, #health-body {
-  color: white;
+  color: #9207e1;
+  font-size: 1.5em;
+  font-family: 'Raleway', 'Montserrat', 'Poppins', sans-serif;
+  border-left: 5px solid #9022f7 !important;
 }
 
 
@@ -329,6 +332,28 @@ blockquote, #health-title, #health-body {
 .post-content {
   padding: 15px;
 }
+
+label.login-form-label {
+  color: #8200ff !important;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+}
+
+div#login_form {
+  background-color: rgba(147, 30, 190, 0.28);
+  padding: 1em;
+  border-radius: 25px;
+}
+
+.login-form-page {
+  background-image: url('../images/background-2.jpg');
+  background-size: cover;
+} 
+
+h1#login-form-title {
+  text-shadow: 2px 2px 4px whitesmoke;
+  font-family: Raleway, Poppins, sans-serif;
+  color: darkmagenta;
+  font-size: 3.5rem;
 
 i.material-icons.reactions {
   font-size: 2em;
